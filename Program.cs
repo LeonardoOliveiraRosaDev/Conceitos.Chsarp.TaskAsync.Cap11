@@ -63,9 +63,17 @@ Task[] conjuntoTarefas = new Task[3]
     Task.Run(() => Console.WriteLine("Essa é a segunda tarefa")),
     Task.Run(() => Console.WriteLine("Essa é a terceira tarefa"))
 };
-
+Thread.Sleep(3000);
+Task[] conjuntoTarefas2 = new Task[3]
+{
+    Task.Run(() => Console.WriteLine("Essa é a primeira tarefa")),
+    Task.Run(() => Console.WriteLine("Essa é a segunda tarefa")),
+    Task.Run(() => Console.WriteLine("Essa é a terceira tarefa"))
+};
 // defini o uso do método embarcado WaitAll()
 Task.WaitAll(conjuntoTarefas);
+Console.WriteLine();
+Task.WaitAll(conjuntoTarefas2);
 Console.WriteLine();
 Console.WriteLine("Fim da execução");
 Console.ReadKey();
