@@ -91,6 +91,8 @@ foreach (var item in listinha)
     Console.WriteLine($"Nome na posição {x++}: "+ item);
 } */
 
+
+/*
 //6º teste
 Task<int> testecinco = Task.Run<int>(() =>
 {
@@ -105,4 +107,18 @@ Task<int> testecinco = Task.Run<int>(() =>
 
 // exibir o resultado na tela
 Console.WriteLine("Resultado " +testecinco.Result);
+*/
+
+// 7º Teste
+Console.WriteLine($"Thread principal iniciada");
+Console.WriteLine();
+// fazer referencia a classe TestandoTasks e acessar o método UmNovoMetodo()
+// Espera-se 2 segundos - manipulador de tempo dentro do método InfosColaborador()
+// na sequencia , a exibicao dos valores das props
+TestandoTasks.UmNovoMetodo();
+Console.WriteLine();
+// tarefa finalizada... espera-se 3 segundos para que o proximo auxiliar
+//WriteLine() seja chamado - manipulador de tempo dentro do método UmNovoMetodo()
+Console.WriteLine("Thread principal completada");
+Console.ReadKey();
 

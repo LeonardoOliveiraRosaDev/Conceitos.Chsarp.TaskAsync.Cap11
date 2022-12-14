@@ -17,9 +17,9 @@ namespace Conceitos.Chsarp.TaskAsync.Cap11
         //    for (int i = 1; i <= 4; i++)
         //    {
         //        Console.WriteLine("i vale: {0}", i);
-           
+
         //    }
-           
+
         //    Console.WriteLine("Este método é percebido, pelo contexto task, como uma tarefa-filha ou secundária.");
         //    Thread.Sleep(3000);
         //}
@@ -36,6 +36,7 @@ namespace Conceitos.Chsarp.TaskAsync.Cap11
             }
         } */
 
+        /*
         //5º teste
         public static async Task<IEnumerable<string>> ListarNomes()
         {// definir uma prop
@@ -57,6 +58,35 @@ namespace Conceitos.Chsarp.TaskAsync.Cap11
             // expressão de retorno
             return nomes;
  
+        }*/
+
+        // definir métodos para executar as operaçoes com as props 
+        // da classe Colaborador
+
+        // estipular uma tarefa assincrona com o objetivo de 
+        // executar uma operação com as props que ja foram 
+        // manipuladas pelo método InfosColaborador.
+        public async static void UmNovoMetodo()
+        {
+            Colaborador col = await InfosColaborador();
+            // definir a operação
+            Console.WriteLine($"Id: {col.Id}\nNome: {col.Nome}\nSalario: {col.Salario}");
+            Thread.Sleep(3000);
+        }
+
+        // implementar um método - tarefa usando de generics
+        // este metodo define as props que estao sendo manipuladas
+        public static Task<Colaborador> InfosColaborador()
+        {
+            Colaborador colab = new()
+            {
+                // definir valores das props da classe Colaborador
+                Id = 01,
+                Nome = "Horticlei",
+                Salario = 1.752
+            };
+            Thread.Sleep(2000);
+            return Task.FromResult(colab);
         }
     }
 }
