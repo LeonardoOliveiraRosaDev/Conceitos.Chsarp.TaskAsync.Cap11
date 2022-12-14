@@ -24,6 +24,7 @@ namespace Conceitos.Chsarp.TaskAsync.Cap11
         //    Thread.Sleep(3000);
         //}
 
+        /*
         // 2º Teste
         public static void MostrarPontinhos() 
         {
@@ -33,6 +34,29 @@ namespace Conceitos.Chsarp.TaskAsync.Cap11
                 Console.WriteLine(".");
                
             }
+        } */
+
+        //5º teste
+        public static async Task<IEnumerable<string>> ListarNomes()
+        {// definir uma prop
+            var nomes = new List<string>()
+            {
+                "Renata", "Renato", "Leonardo", "Amanda", "Kauane", "Anderson", "Luis Renato"
+            };
+
+            // definir um loop para iterar sobre os valores da lista nomes
+            foreach(var item in nomes) 
+            {
+                // definir uma estrutura de decisao para verificar a ocorrencia de um valor determinado
+                if (item.Contains("e"))
+                {
+                    Console.WriteLine(item);
+                    await Task.Delay(2000);
+                }
+            }
+            // expressão de retorno
+            return nomes;
+ 
         }
     }
 }

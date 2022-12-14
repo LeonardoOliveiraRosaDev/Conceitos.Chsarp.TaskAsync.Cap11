@@ -55,8 +55,8 @@ Console.WriteLine();
 //    Thread.Sleep(5000);
 //}
 
-
-// 4º Teste
+/*
+//4 º Teste
 Task[] conjuntoTarefas = new Task[3]
 {
     Task.Run(() => Console.WriteLine("Essa é a primeira tarefa")),
@@ -77,4 +77,32 @@ Task.WaitAll(conjuntoTarefas2);
 Console.WriteLine();
 Console.WriteLine("Fim da execução");
 Console.ReadKey();
+*/
+
+/*
+// executando o 5º teste
+// definir uma variavel
+var listinha = TestandoTasks.ListarNomes().Result;
+Console.WriteLine();
+int x = 1;
+//definir um outro foreach()
+foreach (var item in listinha)
+{
+    Console.WriteLine($"Nome na posição {x++}: "+ item);
+} */
+
+//6º teste
+Task<int> testecinco = Task.Run<int>(() =>
+{
+    int cont = 0;
+    // definir um loop
+    for (int i = 0; i < 5; i++)
+    {
+        cont += i;
+    }
+    return cont;
+});
+
+// exibir o resultado na tela
+Console.WriteLine("Resultado " +testecinco.Result);
 
